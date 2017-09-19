@@ -3,8 +3,6 @@ import re
 import subprocess
 import sys
 
-# ~/AppData/Local/Android/sdk/platform-tools
-
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser()
 	parser.add_argument('-f', '--filename', help='input logcat filename to be searched')
@@ -35,25 +33,6 @@ if __name__ == "__main__":
 							print(str(ln) + " " + part[0])
 				else:
 					continue
-				# re.finditer finds each match that matches the regex. The problem is that it
-				# finds too many matches. So, we would need to continue after finding one match.
-				# This could be more easily done with p.match rather than re.finditer.
-				# jlist = re.finditer(p,line)
-				# one = True
-				# for find in jlist:
-					# if find:
-						# if one:
-							# if args.a:
-								# one = False
-								# print(str(ln) + " " + line)
-							# else:
-								# one = False
-								# part = re.split("\s+[DEIVW]\s+", line)
-								# if len(part) >= 2:
-									# print(str(ln) + " " + part[1])
-								# else:
-									# print(str(ln) + " " + part[0])
-								# total = part.group(0).join(part[1:])
 	else:
 		if args.serial:
 			try:
